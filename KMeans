@@ -15,3 +15,11 @@ println("Within Set Sum of Squared Errors = " + WSSSE)
 
 clusters.save(sc, "target/org/apache/spark/KMeansExample/KMeansModel")
 val sameModel = KMeansModel.load(sc, "target/org/apache/spark/KMeansExample/KMeansModel")
+
+
+
+val test = sc.textFile("data/test.txt")
+val parsedtest = data.map(s=> Vectos.dense(s.split(' ').map(_.toDouble))).cache()
+val predictrun = new KMeans().run(parsedtest)
+val predict = predictrun.predict(parsedData)
+predict.collect()
