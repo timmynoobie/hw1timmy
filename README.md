@@ -66,7 +66,7 @@ http://spark.apache.org/downloads.html
        
  #### Good job on successfully importing and parsing data, let's move on to building the model
   
-  4. Declare a model with the parameters you want: (You may want to check your options on spark mllib documentation)
+4. Declare a model with the parameters you want: (You may want to check your options on spark mllib documentation)
   
      KMeans example:
      
@@ -74,7 +74,7 @@ http://spark.apache.org/downloads.html
             
      We are using KMeans moel and declare it as clusters. It has 3 cluster-centers and runs 100 iterations.
   
-  5. If you want save the model and use for later:
+5. If you want save the model and use for later:
   
      KMeans example:
      
