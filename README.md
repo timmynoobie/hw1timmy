@@ -12,7 +12,7 @@ http://spark.apache.org/downloads.html
 
 
 
-### Basic steps working with API
+### General steps working with API
 
 1. Import correct library:
 
@@ -21,11 +21,44 @@ http://spark.apache.org/downloads.html
         import org.apache.spark.mllib.linalg.Vectors
         
       Sometimes you might need to import library to help you with special structure that contains label:
-        import
       
+        import org.apache.spark.mllib.regression.LabeledPoint
+            
+    b) Then you will need to import model library:
+    
+      KMeans example:
         
-    b) Then you will need to import
+        import org.apache.spark.mllib.clustering.{KMeans, KMeansModel}
+      
+      Logistic Regression example:
+        
+        import org.apache.spark.mllib.classification.{LogisticRegressionModel, LogisticRegressionWithLBFGS}
+      
+ 
+ # Now you are done with importing library, let's start second step 
+ 
+ 2.  Import data from your spark directory:
+ 
+        KMeans example:
+ 
+            val data = sc.textFile("data/mllib/kmeans_data.txt")
+            
+        Here we declare our input file is imported into "data". And it is a "textFile". Feel free to change the path
+        to sc.textFile("yourdata_path.txt").
+ 
+ 3. Parse the data to JavaRDD structure because most of models require it:
+ 
+       KMeans example:
+       
+            val parsedData = data.map(s=>Vecctors.dense(s.split(' ').map(_.toDouble))).cache()
+            
+       Now we are using "Vectors" to split data with space ' ' into double. Each line will be seen as a vector.
+       Remember to inspect your .txt file before-hand because your element might be split by ',' or other characters.
+       
+ # Good job on successfully importing and parsing data, let's move on to building the model
+  4.
+ 
+
+ 
 
     
-
-2. 
