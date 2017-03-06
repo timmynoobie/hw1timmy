@@ -55,6 +55,7 @@ http://spark.apache.org/downloads.html
             
     Here we declare our input file is imported into "data". And it is a "textFile". Feel free to change the path
     to sc.textFile("yourdata_path.txt").
+    
 3. Parse the data to JavaRDD structure because most of models require it:
  
     KMeans example:
@@ -96,7 +97,7 @@ http://spark.apache.org/downloads.html
         
              val WSSSE = clusters.computerCost(parsedData)
              
-        Predict a data set. This returns which center each element grouping to:
+        Predict a data set. This returns which center each element groups to:
         
              val test = clusters.predict(parsedData)
              
@@ -138,8 +139,11 @@ http://spark.apache.org/downloads.html
    
    
   3. Decision tree example:
-   
-        
+          
+        Print stages of Decision tree:
+                
+                val treeModel = model.stages(2).asInstanceOf[DecisionTreeClassificationModel]
+                
    
  
 
