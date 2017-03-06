@@ -86,7 +86,7 @@ http://spark.apache.org/downloads.html
       
  #### You have completed the basic steps of creating model. Next, we will help you to explore some useful functions of KMeans and Logistic Regression model. You may find more in spark mllib documentation
  
-1. KMean example:
+ 1. KMean example:
             
         Find cluster center/mean:
             
@@ -137,7 +137,7 @@ http://spark.apache.org/downloads.html
    
    
    
-   3. Decision tree example:
+  3. Decision tree example:
    
         
    
