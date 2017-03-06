@@ -18,9 +18,13 @@ http://spark.apache.org/downloads.html
 
     a) you will almost always need to import Vector library to help you with data structure conversion:
     
-        `import org.apache.spark.mllib.linalg.Vectors`
+        import org.apache.spark.mllib.linalg.Vectors
         
-       Then you will need to i
+      Sometimes you might need to import library to help you with special structure that contains label:
+        import
+      
+        
+    b) Then you will need to import
 
     
 
