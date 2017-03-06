@@ -144,7 +144,11 @@ http://spark.apache.org/downloads.html
                 
                 val treeModel = model.stages(2).asInstanceOf[DecisionTreeClassificationModel]
                 
-   
+        You may also choose how and which rows of predictions to be displayed:
+        
+                predictions.select("predictedLabel", "label", "features").show(5)
+
+   #### More options are on Spark Mllib Documentation.
  
 
  
