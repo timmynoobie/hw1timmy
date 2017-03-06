@@ -35,7 +35,7 @@ http://spark.apache.org/downloads.html
         import org.apache.spark.mllib.classification.{LogisticRegressionModel, LogisticRegressionWithLBFGS}
       
  
- # Now you are done with importing library, let's start second step 
+ #### Now you are done with importing library, let's start second step 
  
  2.  Import data from your spark directory:
  
