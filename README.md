@@ -23,6 +23,7 @@ http://spark.apache.org/downloads.html
 
 ### General steps working with Spark Mllib API
 
+#### Like other API, start with importing libraries
 1. Import correct library:
 
     a) you will almost always need to import Vector library to help you with data structure conversion:
