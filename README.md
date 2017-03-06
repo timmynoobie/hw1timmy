@@ -37,7 +37,7 @@ http://spark.apache.org/downloads.html
  
  #### Now you are done with importing library, let's start second step 
  
- 2.  Import data from your spark directory:
+2.  Import data from your spark directory:
  
         KMeans example:
  
@@ -45,8 +45,7 @@ http://spark.apache.org/downloads.html
             
         Here we declare our input file is imported into "data". And it is a "textFile". Feel free to change the path
         to sc.textFile("yourdata_path.txt").
- 
- 3. Parse the data to JavaRDD structure because most of models require it:
+3. Parse the data to JavaRDD structure because most of models require it:
  
        KMeans example:
        
