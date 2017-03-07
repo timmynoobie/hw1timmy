@@ -56,6 +56,14 @@ http://spark.apache.org/downloads.html
     Here we declare our input file is imported into "data". And it is a "textFile". Feel free to change the path
     to sc.textFile("yourdata_path.txt").
     
+    Logistic Regression example:
+              
+            val data = MLUtils.loadLibSVMFile(sc, "data/mllib/sample_libsvm_data.txt")
+            
+    Decision tree classification/regression example:
+    
+             val data = spark.read.format("libsvm").load("data/mllib/sample_libsvm_data.txt")
+    
 3. Parse the data to JavaRDD structure because most of models require it:
  
     KMeans example:
@@ -64,6 +72,8 @@ http://spark.apache.org/downloads.html
             
      Now we are using "Vectors" to split data with space ' ' into double. Each line will be seen as a vector.
      Remember to inspect your .txt file before-hand because your element might be split by ',' or other characters.
+     
+     
        
  #### Good job on successfully importing and parsing data, let's move on to building the model
   
@@ -74,6 +84,24 @@ http://spark.apache.org/downloads.html
             val clusters = KMeans.train(parsedData, 3, 100)
             
      We are using KMeans moel and declare it as clusters. It has 3 cluster-centers and runs 100 iterations.
+     
+     Logistic Regression example:
+     
+             val lr = new LogisticRegression()
+             .setMaxIter(10)
+             .setRegParam(0.3)
+             .setElasticNetParam(0.8)
+             val lrModel = lr.fit(training)
+  
+  
+     Decision tree classification/regression example:
+     
+             val featureIndexer = new VectorIndexer()
+             .setInputCol("features")
+             .setOutputCol("indexedFeatures")
+             .setMaxCategories(4) 
+             .fit(data)
+  
   
 5. If you want save the model and use for later:
   
@@ -84,6 +112,10 @@ http://spark.apache.org/downloads.html
             val newmodel = KMeansModel.load(sc, "your path here")
             
       Here, "cluster" is our model name and we load as a KMeans model "newmodel".
+      
+      
+      
+      
       
  #### You have completed the basic steps of creating model. Next, we will help you to explore some useful functions of KMeans and Logistic Regression model. You may find more in spark mllib documentation
  
